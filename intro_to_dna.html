@@ -3,13 +3,13 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>State actions - holochain_101</title>
+        <title>Introduction to DNA - holochain_101</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        <base href="../">
+        <base href="">
 
         <link rel="stylesheet" href="book.css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
@@ -69,7 +69,7 @@
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
-            <ol class="chapter"><li><a href="welcome.html"><strong aria-hidden="true">1.</strong> Welcome</a></li><li><ol class="section"><li><a href="overview.html"><strong aria-hidden="true">1.1.</strong> Overview</a></li><li><a href="how_to_contribute.html"><strong aria-hidden="true">1.2.</strong> How to contribute</a></li></ol></li><li><a href="planning_a_dapp.html"><strong aria-hidden="true">2.</strong> Planning a dApp</a></li><li><a href="building_apps.html"><strong aria-hidden="true">3.</strong> Building Holochain Apps</a></li><li><ol class="section"><li><a href="intro_to_dna.html"><strong aria-hidden="true">3.1.</strong> Introduction to DNA</a></li><li><a href="zome/api_globals.html"><strong aria-hidden="true">3.2.</strong> Using Zome API global variables</a></li><li><a href="zome/api_functions.html"><strong aria-hidden="true">3.3.</strong> Using Zome API functions</a></li><li><a href="zome/callback_functions.html"><strong aria-hidden="true">3.4.</strong> Using callback functions</a></li><li><a href="lifecycle_of_an_entry.html"><strong aria-hidden="true">3.5.</strong> Lifecycle of an Entry</a></li><li><a href="links_entries.html"><strong aria-hidden="true">3.6.</strong> Links Entries</a></li><li><a href="webassembly.html"><strong aria-hidden="true">3.7.</strong> WebAssembly</a></li><li><a href="command_line_tools.html"><strong aria-hidden="true">3.8.</strong> Command Line Tools</a></li><li><a href="embedding_holochain.html"><strong aria-hidden="true">3.9.</strong> Embedding Holochain</a></li><li><ol class="section"><li><a href="core_api.html"><strong aria-hidden="true">3.9.1.</strong> Core API</a></li></ol></li><li><a href="holochain_across_platforms.html"><strong aria-hidden="true">3.10.</strong> Holochain Across Platforms</a></li><li><a href="alpha_migrate.html"><strong aria-hidden="true">3.11.</strong> Upgrading to Alpha 2</a></li></ol></li><li><a href="live_hc_apps.html"><strong aria-hidden="true">4.</strong> Going Live with Holochain Apps</a></li><li><a href="extending_hc_platform.html"><strong aria-hidden="true">5.</strong> Extending the Holochain Platform</a></li><li><ol class="section"><li><a href="naming_conventions.html"><strong aria-hidden="true">5.1.</strong> Naming conventions</a></li><li><a href="writing_development_kit.html"><strong aria-hidden="true">5.2.</strong> Writing a Development Kit (HDK)</a></li><li><a href="zome/implementation.html"><strong aria-hidden="true">5.3.</strong> Implementing Zome API functions</a></li><li><a href="state_actions.html"><strong aria-hidden="true">5.4.</strong> Redux Architecture</a></li><li><ol class="section"><li><a href="state/actions.html" class="active"><strong aria-hidden="true">5.4.1.</strong> State actions</a></li></ol></li><li><a href="state/actors.html"><strong aria-hidden="true">5.5.</strong> State actors</a></li><li><a href="pairs.html"><strong aria-hidden="true">5.6.</strong> Pairs</a></li></ol></li><li><a href="glossary.html"><strong aria-hidden="true">6.</strong> Glossary</a></li><li><ol class="section"><li><a href="agent.html"><strong aria-hidden="true">6.1.</strong> Agent</a></li><li><a href="keys.html"><strong aria-hidden="true">6.2.</strong> Keys</a></li><li><a href="dna.html"><strong aria-hidden="true">6.3.</strong> DNA</a></li><li><a href="zome.html"><strong aria-hidden="true">6.4.</strong> Zome</a></li><li><a href="source_chain.html"><strong aria-hidden="true">6.5.</strong> Source Chain</a></li><li><a href="distributed_hash_table.html"><strong aria-hidden="true">6.6.</strong> Distributed Hash Table</a></li></ol></li></ol>
+            <ol class="chapter"><li><a href="welcome.html"><strong aria-hidden="true">1.</strong> Welcome</a></li><li><ol class="section"><li><a href="overview.html"><strong aria-hidden="true">1.1.</strong> Overview</a></li><li><a href="how_to_contribute.html"><strong aria-hidden="true">1.2.</strong> How to contribute</a></li></ol></li><li><a href="planning_a_dapp.html"><strong aria-hidden="true">2.</strong> Planning a dApp</a></li><li><a href="building_apps.html"><strong aria-hidden="true">3.</strong> Building Holochain Apps</a></li><li><ol class="section"><li><a href="intro_to_dna.html" class="active"><strong aria-hidden="true">3.1.</strong> Introduction to DNA</a></li><li><a href="zome/api_globals.html"><strong aria-hidden="true">3.2.</strong> Using Zome API global variables</a></li><li><a href="zome/api_functions.html"><strong aria-hidden="true">3.3.</strong> Using Zome API functions</a></li><li><a href="zome/callback_functions.html"><strong aria-hidden="true">3.4.</strong> Using callback functions</a></li><li><a href="lifecycle_of_an_entry.html"><strong aria-hidden="true">3.5.</strong> Lifecycle of an Entry</a></li><li><a href="links_entries.html"><strong aria-hidden="true">3.6.</strong> Links Entries</a></li><li><a href="webassembly.html"><strong aria-hidden="true">3.7.</strong> WebAssembly</a></li><li><a href="command_line_tools.html"><strong aria-hidden="true">3.8.</strong> Command Line Tools</a></li><li><a href="embedding_holochain.html"><strong aria-hidden="true">3.9.</strong> Embedding Holochain</a></li><li><ol class="section"><li><a href="core_api.html"><strong aria-hidden="true">3.9.1.</strong> Core API</a></li></ol></li><li><a href="holochain_across_platforms.html"><strong aria-hidden="true">3.10.</strong> Holochain Across Platforms</a></li><li><a href="alpha_migrate.html"><strong aria-hidden="true">3.11.</strong> Upgrading to Alpha 2</a></li></ol></li><li><a href="live_hc_apps.html"><strong aria-hidden="true">4.</strong> Going Live with Holochain Apps</a></li><li><a href="extending_hc_platform.html"><strong aria-hidden="true">5.</strong> Extending the Holochain Platform</a></li><li><ol class="section"><li><a href="naming_conventions.html"><strong aria-hidden="true">5.1.</strong> Naming conventions</a></li><li><a href="writing_development_kit.html"><strong aria-hidden="true">5.2.</strong> Writing a Development Kit (HDK)</a></li><li><a href="zome/implementation.html"><strong aria-hidden="true">5.3.</strong> Implementing Zome API functions</a></li><li><a href="state_actions.html"><strong aria-hidden="true">5.4.</strong> Redux Architecture</a></li><li><ol class="section"><li><a href="state/actions.html"><strong aria-hidden="true">5.4.1.</strong> State actions</a></li></ol></li><li><a href="state/actors.html"><strong aria-hidden="true">5.5.</strong> State actors</a></li><li><a href="pairs.html"><strong aria-hidden="true">5.6.</strong> Pairs</a></li></ol></li><li><a href="glossary.html"><strong aria-hidden="true">6.</strong> Glossary</a></li><li><ol class="section"><li><a href="agent.html"><strong aria-hidden="true">6.1.</strong> Agent</a></li><li><a href="keys.html"><strong aria-hidden="true">6.2.</strong> Keys</a></li><li><a href="dna.html"><strong aria-hidden="true">6.3.</strong> DNA</a></li><li><a href="zome.html"><strong aria-hidden="true">6.4.</strong> Zome</a></li><li><a href="source_chain.html"><strong aria-hidden="true">6.5.</strong> Source Chain</a></li><li><a href="distributed_hash_table.html"><strong aria-hidden="true">6.6.</strong> Distributed Hash Table</a></li></ol></li></ol>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -133,21 +133,43 @@
 
                 <div id="content" class="content">
                     <main>
-                        <p>@TODO
-@see https://github.com/holochain/holochain-rust/issues/176</p>
+                        <a class="header" href="intro_to_dna.html#introduction-to-dna" id="introduction-to-dna"><h1>Introduction to DNA</h1></a>
+<p>As a developer, though you will not have to interact directly with the contents of a DNA file that often, it is quite important to grasp its' role and structure.</p>
+<p>Holochain DNA files are written in a data format known as JSON. It stores sets of key-value pairs, and allows a nested tree structure. It looks like this:</p>
+<pre><code class="language-json">{
+  &quot;property_name&quot;: &quot;property_value&quot;,
+  &quot;nest_name&quot;: {
+    &quot;nested_property_name&quot;: &quot;nested_property_value&quot;
+  }
+}
+</code></pre>
+<p>JSON is usually used for configuration and static data, but in the case of Holochain, these DNA files also contain compiled code, which is executable by Holochain.</p>
+<p>As previously mentioned, you do not need to edit this &quot;master&quot; DNA file directly. Holochain command line tools can be used to build it from your raw files.</p>
+<p>[TODO link to command line tools 'package' command]</p>
+<a class="header" href="intro_to_dna.html#configuration" id="configuration"><h2>Configuration</h2></a>
+<p>For the configuration related parts of your DNA, they will come from actual JSON files stored in your application folder. There will be multiple JSON files nested in the folder structure. An application folder should have a file in its' root called <code>app.json</code>.</p>
+<p>This file should define various properties of your application. Some of these properties Holochain fully expects and will not work without, others can be customised to your application. To see the full details of which properties you can set in <code>app.json</code>, [go here TODO: link to DNA properties reference].</p>
+<a class="header" href="intro_to_dna.html#code" id="code"><h2>Code</h2></a>
+<p>Obviously, the logic and functionality of your application will be written in code. Here is a quick overview of how that works.</p>
+<p>Holochain allows you to break down the functionality of your application into smaller, logical modules, called &quot;Zomes&quot;. Each Zome should have its own sub-folder within the main application folder, in which the configuration and code for that particular Zome should be placed.</p>
+<p>These Zomes can call and access the functionality of the others, but they are written independently. When the DNA file is being built, the code for these Zomes is encoded using Base64 encoding and combined with the configuration file associated with the Zome.</p>
+<p>The configuration file should be a JSON file [TODO: what is the naming convention for this file] stored in the Zome folder. To see the full details of a Zome JSON file, [go here TODO: link to Zome properties reference].</p>
+<p>The only coding language that Holochain knows how to execute is WebAssembly. However, it is unlikely to write WebAssembly code by hand, more likely is to write code in a language that can compile to WebAssembly, such as Rust, or Assemblyscript.</p>
+<p>It is likely within each Zome to store code written in another language, and to define a build step in which it is compiled to WebAssembly, and then included in your DNA. If this is sounding complex, don't worry, you won't have to confront a lot of this complexity yourself, there are tools supplied to make this easy, and you'll be writing in a language that's familiar, or easy to learn.</p>
+<p>With this overview in mind, the details of app development can be explored.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="state_actions.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="building_apps.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="state/actors.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="zome/api_globals.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -159,13 +181,13 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a href="state_actions.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a href="building_apps.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a href="state/actors.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a href="zome/api_globals.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
