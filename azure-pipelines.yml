@@ -4,7 +4,7 @@ pool:
   vmImage: 'Ubuntu 16.04'
 
 steps:
-- script |
+- script: |
     sudo apt-get install qt5-qmake
   displayName: 'Install build prerequisites'
 
