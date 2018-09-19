@@ -1,0 +1,34 @@
+# Azure Pipeline for holochain-rust
+#
+# Containerised build version
+#
+# See:
+# - https://docs.microsoft.com/en-us/azure/devops/pipelines/yaml-schema#container
+# - https://docs.microsoft.com/en-us/azure/devops/pipelines/process/container-phases
+
+resources:
+  containers:
+    - container: builder
+      image: ubuntu:16.04
+
+# Due to an open bug you need to specify a VM pool name to run containers (expected to be fixed in Seop 2018)
+pool:
+  vmImage: 'Ubuntu 16.04'
+
+# Run following steps in the specified container
+container: builder
+
+variables:
+  cargo_home: /root/.cargo
+
+steps:
+- script: |
+    sudo apt-get update
+    sudo apt-get install qt4-qmake
+  displayName: 'Install build prerequisites'
+
+- script: |
+    make test_c_ci
+  env:
+    PATH: $(cargo_home)/bin:$(PATH)
+  displayName: 'C binding tests'
