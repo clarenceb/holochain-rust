@@ -9,7 +9,7 @@
 resources:
   containers:
     - container: builder
-      image: ubuntu16.04
+      image: ubuntu:16.04
 
 # Due to an open bug you need to specify a VM pool name to run containers (expected to be fixed in Seop 2018)
 pool:
