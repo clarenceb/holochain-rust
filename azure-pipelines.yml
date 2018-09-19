@@ -6,15 +6,5 @@ pool:
 steps:
 
 - script: |
-    # Workaround due to system lock on /var/lib/dpkg/lock
-    sleep 15
-
-    sudo apt-get update -y
-    sudo apt-get install -y qt4-qmake
-  displayName: 'Install build prerequisites'
-
-- script: |
-    make test_c_ci
-  env:
-    PATH: $(HOME)/.cargo/bin:$(PATH)
+    ./docker/run make test_c_ci
   displayName: 'C binding tests'
