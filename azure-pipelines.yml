@@ -6,7 +6,8 @@ pool:
 steps:
 
 - script: |
-    apt-get install qt5-qmake
+    sudo apt-get update -y
+    sudo apt-get install -y qt4-qmake
   displayName: 'Install build prerequisites'
 
 - script: |
