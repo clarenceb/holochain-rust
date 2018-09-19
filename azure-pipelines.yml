@@ -6,6 +6,9 @@ pool:
 steps:
 
 - script: |
+    # Workaround due to system lock on /var/lib/dpkg/lock
+    sleep 15
+
     sudo apt-get update -y
     sudo apt-get install -y qt4-qmake
   displayName: 'Install build prerequisites'
