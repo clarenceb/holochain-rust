@@ -11,5 +11,6 @@ steps:
   displayName: 'Install build prerequisites'
 
 - script: |
+    source $HOME/.cargo/env
     make test_c_ci
   displayName: 'C binding tests'
