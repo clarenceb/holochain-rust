@@ -1,0 +1,11 @@
+# Azure Pipeline for holochain-rust
+
+pool:
+  vmImage: 'Ubuntu 16.04'
+
+steps:
+- script: |
+    make test_c_ci
+  env:
+    PATH: $(HOME)/.cargo/bin:$(PATH)
+  displayName: 'C binding tests'
