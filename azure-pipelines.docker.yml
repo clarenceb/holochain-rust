@@ -23,8 +23,8 @@ variables:
 
 steps:
 - script: |
-    sudo apt-get update
-    sudo apt-get install qt4-qmake
+    apt-get update
+    apt-get install qt4-qmake
   displayName: 'Install build prerequisites'
 
 - script: |
