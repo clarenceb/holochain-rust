@@ -9,7 +9,7 @@
 resources:
   containers:
     - container: builder
-      image: ubuntu:16.04
+      image: ubuntu:14.04 # This version includes `sudo` which we need to install additional OS packages
 
 # Due to an open bug you need to specify a VM pool name to run containers (expected to be fixed in Seop 2018)
 pool:
