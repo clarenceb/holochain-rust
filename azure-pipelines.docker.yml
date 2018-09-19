@@ -29,8 +29,6 @@ steps:
   displayName: 'Install build prerequisites'
 
 - script: |
-    echo $PATH
-    which make
     make test_c_ci
   env:
     PATH: $(cargo_home)/bin:$(path)

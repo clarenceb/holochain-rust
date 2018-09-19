@@ -5,10 +5,11 @@ pool:
 
 steps:
 - script: |
+    sudo ./waitforapt
     sudo apt-get update
-    sudo bash -c "sleep 15 && apt-get install -y qt4-qmake"
+    sudo apt-get install -y qt4-qmake
   displayName: 'Install build prerequisites'
 
 - script: |
-    ./docker/run make test_c_ci
+    make test_c_ci
   displayName: 'C binding tests'
