@@ -7,7 +7,7 @@ steps:
 - script: |
     sudo ./waitforapt
     sudo apt-get update
-    sudo apt-get install -y qt4-qmake
+    DEBIAN_FRONTEND=noninteractive sudo -E apt-get install -y qt4-qmake
   displayName: 'Install build prerequisites'
 
 - script: |
