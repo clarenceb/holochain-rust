@@ -20,6 +20,7 @@ container: builder
 
 variables:
   cargo_home: /root/.cargo
+  path: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 steps:
 - script: |
@@ -30,5 +31,5 @@ steps:
 - script: |
     make test_c_ci
   env:
-    PATH: $(cargo_home)/bin:$(PATH)
+    PATH: $(cargo_home)/bin:$(path)
   displayName: 'C binding tests'
