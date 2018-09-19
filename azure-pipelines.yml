@@ -4,6 +4,10 @@ pool:
   vmImage: 'Ubuntu 16.04'
 
 steps:
+- script: |
+    sudo apt-get update
+    sudo bash -c "sleep 15 && apt-get install -y qt4-qmake"
+  displayName: 'Install build prerequisites'
 
 - script: |
     ./docker/run make test_c_ci
