@@ -4,11 +4,11 @@ pool:
   vmImage: 'Ubuntu 16.04'
 
 steps:
+
 - script: |
     sudo apt-get install qt5-qmake
   displayName: 'Install build prerequisites'
 
-steps:
 - script: |
     make test_c_ci
   env:
