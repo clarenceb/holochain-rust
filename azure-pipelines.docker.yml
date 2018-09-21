@@ -21,7 +21,7 @@ container: builder
 steps:
 - script: |
     sudo apt-get update
-    DEBIAN_FRONTEND=noninteractive sudo -E apt-get install -y qt4-qmake libqt4-dev
+    DEBIAN_FRONTEND=noninteractive sudo -E apt-get install -y build-essential qt4-qmake libqt4-dev
   displayName: 'Install build prerequisites'
 
 - script: |

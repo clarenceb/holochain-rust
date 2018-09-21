@@ -5,7 +5,13 @@ pool:
 
 steps:
 - script: |
-    sudo ./waitforapt
+    # Workaround known issue where the VM agent has a lock on Aptitude package manager for a while
+    while sudo fuser /var/{lib/{dpkg,apt/lists},cache/apt/archives}/lock >/dev/null 2>&1; do
+      sleep 1
+    done
+  displayName: 'Temp workaround: Wait for apt lock to be released'
+
+- script: |
     sudo apt-get update
     DEBIAN_FRONTEND=noninteractive sudo -E apt-get install -y qt4-qmake libqt4-dev
   displayName: 'Install build prerequisites'
