@@ -27,9 +27,9 @@ steps:
   displayName: "Formatting & clippy"
 
 - script: |
-  export PATH=$HOME/.cargo/bin:$PATH
-  make install_mdbook
-  ./travis-update-book.sh
+    export PATH=$HOME/.cargo/bin:$PATH
+    make install_mdbook
+    ./travis-update-book.sh
   env:
     ENCRYPTION_LABEL: "30dd9296640e"
     COMMIT_AUTHOR_EMAIL: "connor.turland@holo.host"
