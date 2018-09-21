@@ -17,6 +17,7 @@ steps:
 
 - script: |
     export PATH=$HOME/.cargo/bin:$PATH
+    make install_ci
     make code_coverage && bash <(curl -s https://codecov.io/bash)
   displayName: "Standard tests + code coverage"
 
