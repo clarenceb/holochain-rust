@@ -11,26 +11,41 @@ resources:
     - container: builder
       image: ubuntu:14.04 # This version includes `sudo` which we need to install additional OS packages
 
-# Due to an open bug you need to specify a VM pool name to run containers (expected to be fixed in Seop 2018)
+# Due to an open bug you need to specify a VM pool name to run containers (expected to be fixed in Sep 2018)
 pool:
   vmImage: 'Ubuntu 16.04'
 
 # Run following steps in the specified container
 container: builder
 
-variables:
-  cargo_home: /root/.cargo
-  path: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-
 steps:
 - script: |
     sudo apt-get update
-    sudo apt-get install -y qt4-qmake
+    DEBIAN_FRONTEND=noninteractive sudo -E apt-get install -y qt4-qmake libqt4-dev
   displayName: 'Install build prerequisites'
 
 - script: |
-    export $PATH
+    export PATH=$HOME/.cargo/bin:$PATH
     make test_c_ci
-  env:
-    PATH: $(cargo_home)/bin:$(path)
   displayName: 'C binding tests'
+
+- script: |
+    export PATH=$HOME/.cargo/bin:$PATH
+    make install_ci
+    make code_coverage && bash <(curl -s https://codecov.io/bash)
+  displayName: "Standard tests + code coverage"
+
+- script: |
+    export PATH=$HOME/.cargo/bin:$PATH
+    make fmt_check
+    make clippy
+  displayName: "Formatting & clippy"
+
+- script: |
+    export PATH=$HOME/.cargo/bin:$PATH
+    make install_mdbook
+    ./travis-update-book.sh
+  env:
+    ENCRYPTION_LABEL: "30dd9296640e"
+    COMMIT_AUTHOR_EMAIL: "connor.turland@holo.host"
+  displayName: "Mdbook Build"
